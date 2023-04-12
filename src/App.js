@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useEffect, useState } from "react";
+import "./App.css";
+import Form from "./Form.js";
 function App() {
+  const makeAPICall = async () => {
+    try {
+      const response = await fetch(
+        "https://api.shrtco.de/v2/shorten?url=trandrew.ca",
+        { mode: "cors" }
+      );
+      const data = await response.json();
+      console.log({ data });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    makeAPICall();
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1 className="text-4xl">More than just shorter links</h1> */}
+      <Form></Form>
     </div>
   );
 }
-
 export default App;

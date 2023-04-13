@@ -2,7 +2,7 @@ import { useState } from "react";
 import logo from "./img/logo.svg";
 
 export default function Nav() {
-  const [navOpen, setNavOpen] = useState(true);
+  const [navOpen, setNavOpen] = useState(false);
 
   return (
     <div className="px-6 md:px-0">
@@ -55,7 +55,7 @@ export default function Nav() {
       </div>
 
       {/* Mobile Menu */}
-      <div className="relative">
+      <div className="relative md:hidden">
         <div
           className={
             "bg-darkviolet absolute left-0 right-0 text-white text-center rounded-lg text-xl font-bold p-10 " +

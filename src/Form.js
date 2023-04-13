@@ -24,19 +24,19 @@ function Links({ links }) {
     <div>
       {links.map((link, index) => (
         <div
-          className=" my-4 rounded-md mb-2 flex md:flex-row flex-col bg-white"
+          className=" my-4 rounded-md mb-2 flex md:flex-row flex-col bg-white items-center px-4"
           key={link.key}
         >
-          <div className="grow flex items-center mr-auto text-left mx-4 my-4">
+          <div className="grow flex items-center mr-auto text-left my-4">
             <span>{link.link}</span>
           </div>
-          <hr className=" border-gray" />
-          <div className="grow-0 flex items-center text-cyan mx-4 my-4">
+          <hr className=" border-gray w-full md:hidden" />
+          <div className="grow-0 flex items-center mr-auto text-cyan my-4">
             <span>{link.shortLink}</span>
           </div>
           <button
             className={
-              "grow-0 hover:opacity-50 btn-copy h-10 md:ml-5 md:w-24 mx-4 mb-4 " +
+              "grow-0 hover:opacity-50 btn-copy h-10 md:ml-5 w-full md:w-24 mb-4 md:mb-0 " +
               (copiedLink == index ? "active" : "")
             }
             onClick={() => {

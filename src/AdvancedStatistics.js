@@ -12,11 +12,11 @@ export default function AdvancedStatistics() {
           statistics dashboard.
         </p>
       </div>
-      <div className="relative text-center md:text-left">
+      <div className="relative text-center lg:text-left">
         <div className="grid lg:grid-cols-3 gap-4 py-20 z-20 relative">
           {/* Brand Recognition Card */}
           <div className="px-6 pb-6 bg-white relative rounded-lg h-fit">
-            <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto md:mx-0">
+            <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto lg:mx-0">
               <img src={BrandRecognition} />
             </div>
             <h3 className="text-2xl font-bold mb-2 mt-6">Brand Recognition</h3>
@@ -29,7 +29,7 @@ export default function AdvancedStatistics() {
 
           {/* Detailed Records Card */}
           <div className="px-6 pb-6 bg-white relative rounded-lg h-fit mt-12">
-            <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto md:mx-0">
+            <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto lg:mx-0">
               <img src={DetailedRecords} />
             </div>
             <h3 className="text-2xl font-bold mb-2 mt-6">Detailed Records</h3>
@@ -42,7 +42,7 @@ export default function AdvancedStatistics() {
 
           {/* Fully Customizable Card */}
           <div className="px-6 pb-6 bg-white relative rounded-lg h-fit mt-12 md:mt-24">
-            <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto md:mx-0">
+            <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto lg:mx-0">
               <img src={FullyCustomizable} />
             </div>
             <h3 className="text-2xl font-bold mb-2 mt-6">Fully Customizable</h3>

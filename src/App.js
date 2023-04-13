@@ -17,7 +17,7 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-blueishgray px-6 md:px-0">
+      <div className="bg-blueishgray px-6 lg:px-0">
         <div className="max-w-screen-lg mx-auto">
           <Form></Form>
           <AdvancedStatistics></AdvancedStatistics>

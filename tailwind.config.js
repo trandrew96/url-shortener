@@ -16,6 +16,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         working: "url('/src/img/illustration-working.svg')",
+        "boost-mobile": "url('/src/img/bg-boost-mobile.svg')",
+        "boost-desktop": "url('/src/img/bg-boost-desktop.svg')",
       },
     },
   },

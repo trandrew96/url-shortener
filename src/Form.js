@@ -12,7 +12,7 @@ async function getShortenedUrl(link) {
   }
 }
 
-function MyComponent({ links }) {
+function Links({ links }) {
   const [copiedLink, setCopiedLink] = useState(-1);
 
   function handleCopy(index, link) {
@@ -27,16 +27,16 @@ function MyComponent({ links }) {
           className="py-2 border-2 rounded-md mb-2 flex bg-white px-4 my-2"
           key={link.key}
         >
-          <div className="grow flex items-center font-semibold mr-auto text-left">
+          <div className="grow flex items-center mr-auto text-left">
             <span>{link.link}</span>
           </div>
-          <div className="grow-0 flex items-center font-semibold text-cyan">
+          <div className="grow-0 flex items-center text-cyan">
             <span>{link.shortLink}</span>
           </div>
           <button
             className={
-              "grow-0 hover:opacity-50 text-white px-4 py-1 rounded-md font-semibold ml-2 w-24 " +
-              (copiedLink == index ? "bg-darkviolet" : "bg-cyan")
+              "grow-0 hover:opacity-50 btn-copy h-10 ml-5 " +
+              (copiedLink == index ? "active" : "")
             }
             onClick={() => {
               handleCopy(index, link.shortLink);
@@ -51,7 +51,9 @@ function MyComponent({ links }) {
 }
 
 export default function Form() {
-  const [links, setLinks] = useState([]);
+  const [links, setLinks] = useState([
+    { link: "https://www.google.com/", shortLink: "https://shrtco.de/GQa7mU" },
+  ]);
   const [inputError, setInputError] = useState("");
 
   function handleSubmit(e) {
@@ -88,8 +90,9 @@ export default function Form() {
   }
 
   return (
-    <div className="max-w-screen-md mx-auto">
-      <div className="bg-darkviolet py-8 px-8 mx-auto rounded-md">
+    <div className="mx-auto">
+      {/* Purple Input Box */}
+      <div className="bg-darkviolet py-8 px-8 mx-auto rounded-lg bg-[url('/src/img/bg-shorten-desktop.svg')]">
         <form method="post" onSubmit={handleSubmit}>
           <div className="flex">
             <input
@@ -99,7 +102,7 @@ export default function Form() {
               name="myLink"
             ></input>
             <button
-              className="grow-0 hover:opacity-50 bg-cyan text-white px-5 py-2 rounded-md ml-4 font-semibold"
+              className="grow-0 btn-shorten px-5 py-2 ml-4 font-semibold"
               type="submit"
             >
               Shorten It !
@@ -113,7 +116,7 @@ export default function Form() {
         </div>
       </div>
 
-      <MyComponent links={links}></MyComponent>
+      <Links links={links}></Links>
     </div>
   );
 }

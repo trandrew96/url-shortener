@@ -43,7 +43,7 @@ export default function Nav() {
 
         {/* Hamburger Menu */}
         <button
-          className="ml-auto mr-4 md:hidden"
+          className="ml-auto md:hidden"
           onClick={() => setNavOpen(!navOpen)}
         >
           <svg viewBox="0 0 100 80" width="40" height="40" fill="gray">

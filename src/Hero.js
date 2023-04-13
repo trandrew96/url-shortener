@@ -2,15 +2,13 @@ import Illustration from "./img/illustration-working.svg";
 
 export default function Hero() {
   return (
-    <div className="text-center md:text-left md:bg-[url('/src/img/illustration-working.svg')] bg-no-repeat bg-[right] bg-contain my-24">
-      <div className="px-6 md:hidden bg-[url('/src/img/illustration-working.svg')] bg-origin-content h-96 bg-no-repeat bg-cover">
-        {/* <img src={Illustration} className="" /> */}
-      </div>
-      <div className="px-6 md:px-0 mt-10 md:mt-0">
-        <h1 className="text-6xl font-bold md:w-2/3 lg:w-1/2 mb-3">
+    <div className="flex flex-col-reverse md:flex-row text-center md:text-left md:my-24 mb-12">
+      {/* Text Section */}
+      <div className="px-6 md:px-0 mt-10 md:w-1/2">
+        <h1 className="text-6xl font-bold  mb-3">
           More than just shorter links
         </h1>
-        <p className="text-gray mb-8 md:w-2/3 lg:w-2/5">
+        <p className="text-gray mb-8">
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </p>
@@ -21,6 +19,9 @@ export default function Hero() {
           Get Started
         </a>
       </div>
+
+      {/* img div */}
+      <div className="md:flex-1 bg-working h-48 md:h-96 bg-no-repeat bg-contain md:bg-cover bg-center md:bg-left"></div>
     </div>
   );
 }

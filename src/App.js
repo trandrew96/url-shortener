@@ -10,7 +10,7 @@ import Footer from "./Footer.js";
 function App() {
   return (
     <div className="App ">
-      <div className="bg-white">
+      <div className="bg-white px-6">
         <div className="max-w-screen-lg mx-auto">
           <Nav></Nav>
           <Hero></Hero>

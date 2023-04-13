@@ -13,7 +13,11 @@ module.exports = {
       red: "hsl(0, 87%, 67%)",
       blueishgray: "#f0f1f6",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        working: "url('/src/img/illustration-working.svg')",
+      },
+    },
   },
   plugins: [],
 };

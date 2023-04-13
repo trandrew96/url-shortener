@@ -15,7 +15,7 @@ export default function AdvancedStatistics() {
       <div className="relative text-center lg:text-left">
         <div className="grid lg:grid-cols-3 gap-4 py-20 z-20 relative">
           {/* Brand Recognition Card */}
-          <div className="px-6 pb-6 bg-white relative rounded-lg h-fit">
+          <div className="px-6 pb-6 bg-white relative rounded-lg h-fit z-20">
             <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto lg:mx-0">
               <img src={BrandRecognition} />
             </div>
@@ -28,7 +28,7 @@ export default function AdvancedStatistics() {
           </div>
 
           {/* Detailed Records Card */}
-          <div className="px-6 pb-6 bg-white relative rounded-lg h-fit mt-12">
+          <div className="px-6 pb-6 bg-white relative rounded-lg h-fit z-20 mt-12">
             <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto lg:mx-0">
               <img src={DetailedRecords} />
             </div>
@@ -41,7 +41,7 @@ export default function AdvancedStatistics() {
           </div>
 
           {/* Fully Customizable Card */}
-          <div className="px-6 pb-6 bg-white relative rounded-lg h-fit mt-12 md:mt-24">
+          <div className="px-6 pb-6 bg-white relative rounded-lg h-fit mt-12 z-20 md:mt-24">
             <div className="bg-darkviolet w-fit rounded-full p-4 -mt-8 mx-auto lg:mx-0">
               <img src={FullyCustomizable} />
             </div>
@@ -51,9 +51,13 @@ export default function AdvancedStatistics() {
               customizable links, supercharging audience engagement.
             </p>
           </div>
+
+          {/* Vertical Cyan Bg */}
+          <div className="absolute top-20 h-2/3 w-full z-10 md:hidden vertical-bg"></div>
         </div>
+
         <hr className="bg-cyan h-3 border-none absolute w-full top-1/2 z-10 " />
-        <div className="border-l-8 border-cyan h-2/3 absolute left-1/2 top-12 md:hidden"></div>
+        {/* <div className="border-l-8 border-cyan h-2/3 absolute left-1/2 top-12 md:hidden"></div> */}
       </div>
     </div>
   );

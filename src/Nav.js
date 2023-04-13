@@ -5,7 +5,7 @@ export default function Nav() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="px-6 md:px-0">
+    <div>
       <div className="flex items-center py-6 md:py-10 relative">
         <a href="#">
           <img src={logo} />

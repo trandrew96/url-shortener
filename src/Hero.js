@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div className="flex flex-col-reverse md:flex-row text-center md:text-left md:my-24 mb-12">
       {/* Text Section */}
-      <div className="px-6 md:px-0 mt-10 md:w-1/2">
+      <div className="mt-10 md:flex-1 md:pr-4">
         <h1 className="text-6xl font-bold  mb-3">
           More than just shorter links
         </h1>

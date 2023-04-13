@@ -24,18 +24,19 @@ function Links({ links }) {
     <div>
       {links.map((link, index) => (
         <div
-          className="py-2 border-2 rounded-md mb-2 flex bg-white px-4 my-2"
+          className=" my-4 rounded-md mb-2 flex md:flex-row flex-col bg-white"
           key={link.key}
         >
-          <div className="grow flex items-center mr-auto text-left">
+          <div className="grow flex items-center mr-auto text-left mx-4 my-4">
             <span>{link.link}</span>
           </div>
-          <div className="grow-0 flex items-center text-cyan">
+          <hr className=" border-gray" />
+          <div className="grow-0 flex items-center text-cyan mx-4 my-4">
             <span>{link.shortLink}</span>
           </div>
           <button
             className={
-              "grow-0 hover:opacity-50 btn-copy h-10 ml-5 " +
+              "grow-0 hover:opacity-50 btn-copy h-10 md:ml-5 md:w-24 mx-4 mb-4 " +
               (copiedLink == index ? "active" : "")
             }
             onClick={() => {
@@ -94,15 +95,15 @@ export default function Form() {
       {/* Purple Input Box */}
       <div className="bg-darkviolet py-8 px-8 mx-auto rounded-lg bg-[url('/src/img/bg-shorten-desktop.svg')]">
         <form method="post" onSubmit={handleSubmit}>
-          <div className="flex">
+          <div className="flex md:flex-row flex-col">
             <input
-              className="grow px-5 py-2 rounded-md "
+              className="grow px-5 py-4 rounded-md mb-8 md:mb-0"
               placeholder="Shorten a link here..."
               type="text"
               name="myLink"
             ></input>
             <button
-              className="grow-0 btn-shorten px-5 py-2 ml-4 font-semibold"
+              className="grow-0 btn-shorten px-5 py-2 md:ml-4 font-semibold"
               type="submit"
             >
               Shorten It !

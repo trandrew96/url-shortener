@@ -7,13 +7,13 @@ import instagramLogo from "./img/icon-instagram.svg";
 export default function Footer() {
   return (
     <div className="bg-verydarkblue text-white py-10">
-      <div className="max-w-screen-lg flex mx-auto">
+      <div className="max-w-screen-lg flex mx-auto md:flex-row flex-col text-center md:text-left">
         <div>
-          <a href="#">
+          <a href="#" className="mx-auto inline-block mb-10">
             <img src={logo} />
           </a>
         </div>
-        <div className="ml-auto mr-20">
+        <div className="md:ml-auto md:mr-20 mb-10 md:mb-0">
           <h4 className="mb-4">Features</h4>
           <a href="#" className="text-gray hover:text-cyan">
             Link Shortening
@@ -28,7 +28,7 @@ export default function Footer() {
           </a>
           <br />
         </div>
-        <div className="mr-20">
+        <div className="md:mr-20 mb-10 md:mb-0">
           <h4 className="mb-4">Resources</h4>
           <a href="#" className="text-gray hover:text-cyan">
             Blog
@@ -43,7 +43,7 @@ export default function Footer() {
           </a>
           <br />
         </div>
-        <div className="mr-20">
+        <div className="md:mr-20 mb-10 md:mb-0">
           <h4 className="mb-4">Company</h4>
           <a href="#" className="text-gray hover:text-cyan">
             About
@@ -61,7 +61,7 @@ export default function Footer() {
             Contact
           </a>
         </div>
-        <div className="flex">
+        <div className="flex mx-auto md:mx-0">
           <a href="#" className="mr-3">
             <img src={facebookLogo} />
           </a>

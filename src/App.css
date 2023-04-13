@@ -17,10 +17,6 @@ body {
   color: white;
 }
 
-.btn-copy {
-  width: 6rem;
-}
-
 .btn-copy.active {
   background-color: var(--darkviolet);
 }

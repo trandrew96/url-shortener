@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="bg-[url('/src/img/illustration-working.svg')] bg-no-repeat bg-[right] bg-contain my-24">
+    <div className="text-center md:text-left md:bg-[url('/src/img/illustration-working.svg')] bg-no-repeat bg-[right] bg-contain my-24">
       <div className="">
         <h1 className="text-6xl font-bold lg:w-1/2">
           More than just shorter links

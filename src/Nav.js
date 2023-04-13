@@ -8,7 +8,7 @@ export default function Nav() {
     <div className="relative">
       <div
         className={
-          "absolute bg-gray/50 h-screen w-screen z-10 md:hidden " +
+          "absolute h-screen w-screen z-10 md:hidden " +
           (navOpen ? "visible" : "hidden")
         }
         onClick={() => setNavOpen(false)}

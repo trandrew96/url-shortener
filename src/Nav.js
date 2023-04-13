@@ -5,7 +5,16 @@ export default function Nav() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div>
+    <div className="relative">
+      <div
+        className={
+          "absolute bg-gray/50 h-screen w-screen z-10 md:hidden " +
+          (navOpen ? "visible" : "hidden")
+        }
+        onClick={() => setNavOpen(false)}
+      ></div>
+
+      {/* Logo & Desktop Nav Items */}
       <div className="flex items-center py-6 md:py-10 relative">
         <a href="#">
           <img src={logo} />
@@ -55,7 +64,7 @@ export default function Nav() {
       </div>
 
       {/* Mobile Menu */}
-      <div className="relative md:hidden">
+      <div className="relative md:hidden z-20">
         <div
           className={
             "bg-darkviolet absolute left-0 right-0 text-white text-center rounded-lg text-xl font-bold p-10 " +

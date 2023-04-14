@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const shrtcode_api = "https://api.shrtco.de/v2/shorten";
 
+// Call the shrtcode_api
 async function getShortenedUrl(link) {
   try {
     const custom_shrtcode_api = shrtcode_api + "?url=" + link;
@@ -12,14 +13,19 @@ async function getShortenedUrl(link) {
   }
 }
 
+// Component that displys all of the links that have been generated so far
 function Links({ links }) {
+  // We need a way to keep track of which link was copied last
+  // so we can update the style of that specific copy button
   const [copiedLink, setCopiedLink] = useState(-1);
 
+  // Copy the shortened URL to the clipboard and update the style of that button
   function handleCopy(index, link) {
     setCopiedLink(index);
     navigator.clipboard.writeText(link);
   }
 
+  // Create the shortened URL boxes by mapping the array of links
   return (
     <div>
       {links.map((link, index) => (
@@ -51,6 +57,7 @@ function Links({ links }) {
   );
 }
 
+// Form for shortening links AND container for displaying all the links that were created
 export default function Form() {
   const [links, setLinks] = useState([
     { link: "https://www.google.com/", shortLink: "https://shrtco.de/GQa7mU" },
@@ -62,37 +69,40 @@ export default function Form() {
     e.preventDefault();
 
     // Read the form data
-    const form = e.target;
-
     const link = e.target.myLink.value;
 
+    // Display error if link is empty
     if (!link) {
       setInputError("Please add a link");
       return;
     }
 
     getShortenedUrl(link).then((response) => {
-      console.log(response);
+      // console.log(response);
 
-      let shortLink = response.result.full_short_link;
+      if (response.ok) {
+        // add link to the list and clear any errors
+        let shortLink = response.result.full_short_link;
+        let new_links = [...links];
 
-      let new_links = [...links];
-      new_links.push({
-        link: link,
-        shortLink: shortLink,
-        key: links.length + 1,
-      });
-      setLinks(new_links);
-      console.log(`new links are`);
-      console.log(links);
+        new_links.push({
+          link: link,
+          shortLink: shortLink,
+          key: links.length + 1,
+        });
 
-      setInputError("");
+        setLinks(new_links);
+        setInputError("");
+      } else {
+        // Display a generic error (there are 10 possible error codes btw)
+        setInputError("Error. Please check the URL is valid.");
+      }
     });
   }
 
   return (
     <div className="mx-auto">
-      {/* Purple Input Box */}
+      {/* Form for shortening links */}
       <div className="bg-darkviolet py-8 px-8 mx-auto rounded-lg bg-[url('/src/img/bg-shorten-desktop.svg')]">
         <form method="post" onSubmit={handleSubmit}>
           <div className="flex md:flex-row flex-col">
@@ -110,6 +120,8 @@ export default function Form() {
             </button>
           </div>
         </form>
+
+        {/* Error message wrapper */}
         <div className="relative">
           <span className="text-red absolute left-0 italic text-sm">
             {inputError}

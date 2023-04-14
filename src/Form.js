@@ -25,12 +25,10 @@ function Links({ links }) {
     navigator.clipboard.writeText(link);
   }
 
-  const reversedLinks = links.reverse();
-
   // Create the shortened URL boxes by mapping the array of links
   return (
     <div>
-      {reversedLinks.map((link, index) => (
+      {links.map((link, index) => (
         <div
           className="py-2 my-4 rounded-md mb-2 flex md:flex-row flex-col bg-white items-center px-4 transition-opacity"
           key={link.key}

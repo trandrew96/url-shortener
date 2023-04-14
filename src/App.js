@@ -17,8 +17,8 @@ function App() {
         </div>
       </div>
 
-      <div className="relative px-6 lg:px-0 h-full">
-        <div className="max-w-screen-lg mx-auto">
+      <div className="relative h-full">
+        <div className="max-w-screen-lg mx-auto px-6 lg:px-0">
           <Form></Form>
           <AdvancedStatistics></AdvancedStatistics>
         </div>

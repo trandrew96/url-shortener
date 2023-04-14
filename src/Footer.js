@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         {/* Socials */}
-        <div className="flex md:mr-4 mx-auto w-fit">
+        <div className="flex md:mr-4 md:ml-0 mx-auto w-fit">
           <a href="#" className="mr-3">
             <img src={facebookLogo} />
           </a>

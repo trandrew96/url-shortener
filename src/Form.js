@@ -59,13 +59,7 @@ function Links({ links }) {
 
 // Form for shortening links AND container for displaying all the links that were created
 export default function Form() {
-  const [links, setLinks] = useState([
-    {
-      link: "https://www.google.com/",
-      shortLink: "https://shrtco.de/GQa7mU",
-      key: 1,
-    },
-  ]);
+  const [links, setLinks] = useState([]);
   const [inputError, setInputError] = useState("");
 
   function handleSubmit(e) {

@@ -17,11 +17,12 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-blueishgray px-6 lg:px-0">
+      <div className="relative px-6 lg:px-0 h-full">
         <div className="max-w-screen-lg mx-auto">
           <Form></Form>
           <AdvancedStatistics></AdvancedStatistics>
         </div>
+        <div className="bg-blueishgray absolute h-full w-full top-14 -z-10"></div>
       </div>
 
       <BoostYourLinks></BoostYourLinks>

@@ -25,12 +25,14 @@ function Links({ links }) {
     navigator.clipboard.writeText(link);
   }
 
+  const reversedLinks = links.reverse();
+
   // Create the shortened URL boxes by mapping the array of links
   return (
     <div>
-      {links.map((link, index) => (
+      {reversedLinks.map((link, index) => (
         <div
-          className=" my-4 rounded-md mb-2 flex md:flex-row flex-col bg-white items-center px-4"
+          className="py-2 my-4 rounded-md mb-2 flex md:flex-row flex-col bg-white items-center px-4 transition-opacity"
           key={link.key}
         >
           <div className="grow flex items-center mr-auto text-left my-4">
@@ -60,7 +62,11 @@ function Links({ links }) {
 // Form for shortening links AND container for displaying all the links that were created
 export default function Form() {
   const [links, setLinks] = useState([
-    { link: "https://www.google.com/", shortLink: "https://shrtco.de/GQa7mU" },
+    {
+      link: "https://www.google.com/",
+      shortLink: "https://shrtco.de/GQa7mU",
+      key: 1,
+    },
   ]);
   const [inputError, setInputError] = useState("");
 
@@ -78,24 +84,32 @@ export default function Form() {
     }
 
     getShortenedUrl(link).then((response) => {
-      // console.log(response);
+      console.log(response);
 
       if (response.ok) {
         // add link to the list and clear any errors
         let shortLink = response.result.full_short_link;
         let new_links = [...links];
 
-        new_links.push({
+        new_links.unshift({
           link: link,
           shortLink: shortLink,
           key: links.length + 1,
         });
 
+        console.log(new_links);
+
         setLinks(new_links);
         setInputError("");
       } else {
         // Display a generic error (there are 10 possible error codes btw)
-        setInputError("Error. Please check the URL is valid.");
+        switch (response.error_code) {
+          case 10:
+            setInputError("The link you entered is a disallowed link.");
+            break;
+          default:
+            setInputError("Error. Please check the URL is valid.");
+        }
       }
     });
   }
@@ -123,7 +137,7 @@ export default function Form() {
 
         {/* Error message wrapper */}
         <div className="relative">
-          <span className="text-red absolute left-0 italic text-sm">
+          <span className="text-red absolute left-0 italic text-sm mt-1">
             {inputError}
           </span>
         </div>

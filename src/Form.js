@@ -30,7 +30,7 @@ function Links({ links }) {
     <div>
       {links.map((link, index) => (
         <div
-          className="py-2 my-4 rounded-md mb-2 flex md:flex-row flex-col bg-white items-center px-4 transition-opacity"
+          className="py-2 my-4 rounded-md mb-2 flex md:flex-row flex-col bg-white items-center px-4 transition-opacity opacity-animation"
           key={link.key}
         >
           <div className="grow flex items-center mr-auto text-left my-4">
